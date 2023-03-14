@@ -3,19 +3,18 @@ const ABI=require('./abi.json')
 
 
 async function getT(){
-const usdtadd='0xdAC17F958D2ee523a2206206994597C13D831ec7';
+const usdtadd='0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 
- const provider=new ethers.WebSocketProvider('ws://mainnet.infura.io/ws/v3/idhere')
+ const provider=new ethers.WebSocketProvider('wss://mainnet.infura.io/ws/v3/7b04e9f39b424f97a38950cb4a02d611')
  console.log(provider)
 
 const contract=new ethers.Contract(usdtadd,ABI,provider)
- await contract.on("Transfer",(from,to,value,event)=>{
+  contract.on("Transfer",(from,to,value,event)=>{
     let transobj={
         from:from,
         to:to,
         value:value,
-        eventData:event
-        
+        eveentdata:event
     }
     console.log(JSON.stringify(transobj,null,4))
 
