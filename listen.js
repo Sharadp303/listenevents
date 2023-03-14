@@ -4,7 +4,7 @@ require("dotenv").config();
 //console.log(process.env.ALCHEMY_KEY)
 
 async function gTransfer(){
-const usdtadd='0x72B7D61E8fC8cF971960DD9cfA59B8C829D91991';
+const usdtadd='0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 const provider=new ethers.WebSocketProvider(
     `wss://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_KEY}`
 )
